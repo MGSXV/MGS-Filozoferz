@@ -6,9 +6,14 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/20 20:27:52 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:11:56 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/headers/philosophers.h"
 
+int	main(int c, char **v)
+{
+	foo();
+	return (0);
+}
