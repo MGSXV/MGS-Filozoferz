@@ -41,7 +41,7 @@ About the logs of your program:
 ## Mendatory Part
 
 | **Program name**    | philo
-||
+|:---:|
 | **Turn in files**   | Makefile, *.h, *.c, in directory philo/
 ||
 | **Makefile**        | NAME, all, clean, fclean, re
