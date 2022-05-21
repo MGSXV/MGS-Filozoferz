@@ -6,13 +6,13 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 19:25:42 by sel-kham          #+#    #+#             */
-/*   Updated: 2021/12/15 16:54:51 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/05/21 15:07:56 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 
