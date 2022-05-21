@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 18:57:41 by sel-kham          #+#    #+#              #
-#    Updated: 2022/05/20 21:36:02 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/05/21 15:51:45 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,11 +27,14 @@ HEADERS_DIR := $(INCLUDES)/headers
 
 PRINTF := $(PRINTF_DIR)/libftprintf.a
 HEADERS := $(addprefix $(HEADERS_DIR)/, philosophers.h)
+HELPERS := $(SRC_DIR)/helpers
+APP := $(SRC_DIR)/app
 MAIN := main.c
-SRC := $(SRC_DIR)/foo.c
+SRC := $(HELPERS)/ft_strncmp.c $(HELPERS)/ft_error.c\
+		$(APP)/manage_inputs.c
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
-CFLAGS := -g
+CFLAGS := -Wall -Wextra -Werror
 NAME := philo
 PH := "\n$(GREEN)  _____  _     _ _____         _____  _______  _____   _____  _     _ _______  ______ _______\n |_____] |_____|   |   |      |     | |______ |     | |_____] |_____| |______ |_____/ |______\n |       |     | __|__ |_____ |_____| ______| |_____| |       |     | |______ |    \_ ______|\n                                                                                             \n$(RED)       __  ____________\n      /  |/  / ___/ __/\n     / /|_/ / (_ /\ \  \n$(GREEN)BY$(RED)  /_/  /_/\___/___/  \n                   \n$(WHITE)\n"
 
@@ -44,7 +47,12 @@ $(NAME): $(MAIN) $(PRINTF) $(HEADERS) $(OBJ)
 	@echo "$(GREEN)Making $(WHITE)philo file..."
 	@$(CC) $(CFLAGS) $(MAIN) $(PRINTF) $(OBJ) -o $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+$(OBJ_DIR)/%.o: $(HELPERS)/%.c
+	@echo "$(GREEN)Making $(WHITE)source object files..."
+	@mkdir -p $(OBJ_DIR)/
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR)/%.o: $(APP)/%.c
 	@echo "$(GREEN)Making $(WHITE)source object files..."
 	@mkdir -p $(OBJ_DIR)/
 	@$(CC) $(CFLAGS) -c $< -o $@
