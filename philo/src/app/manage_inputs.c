@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 15:52:03 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/21 16:35:03 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:44:34 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ Try \"--help\" for more information.\n");
 		{
 			if (!ft_isnumber(inputs[i]))
 			{
-				ft_printf("Arguments error!\nTry \"--help\"\n\
-for more information.\n");
+				ft_printf("Arguments error!\nTry \"--help\" \
+flag for more information.\n");
 				return (false);
 			}
 		}
