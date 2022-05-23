@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/21 15:55:22 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/05/21 16:07:56 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 // Helpers functions
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int	ft_isdigit(int c);
 
 // Managing inputs functions
 bool	manage_inputs(int c, char **inputs);
