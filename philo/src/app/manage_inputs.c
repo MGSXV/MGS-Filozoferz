@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 15:52:03 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/23 19:44:34 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/05/24 18:09:48 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,14 @@ bool	manage_inputs(int c, char **inputs)
 	i = 0;
 	if (c == 2 && !ft_strncmp(inputs[1], "--help", ft_strlen("--help")))
 	{
-		ft_printf("\"philosophers\" requires 4 to 5 arguments passed as fllows:\n\
-$> ./philo arg1 arg2 arg3 arg4 arg5 ...\n");
+		printf("\"philosophers\" requires 4 to 5 arguments passed as fllows:\n\
+$> ./philo arg1 arg2 arg3 arg4 arg5 ...\n\
+All arguments should be positive intigers!\n");
 		return (false);
 	}
 	if (c != 5 && c != 6)
 	{
-		ft_printf("Invalid number of arguments!\n\
+		printf("Invalid number of arguments!\n\
 Try \"--help\" for more information.\n");
 		return (false);
 	}
@@ -48,7 +49,7 @@ Try \"--help\" for more information.\n");
 		{
 			if (!ft_isnumber(inputs[i]))
 			{
-				ft_printf("Arguments error!\nTry \"--help\" \
+				printf("Arguments error!\nTry \"--help\" \
 flag for more information.\n");
 				return (false);
 			}

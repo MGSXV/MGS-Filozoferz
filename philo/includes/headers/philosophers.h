@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/24 17:40:27 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/05/24 18:13:25 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 # include<stdbool.h>
 
 # include "types.h"
-# include "../ft_printf/ft_printf.h"
 
 // Helpers functions
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
-int	ft_isdigit(int c);
-int	ft_atoi(const char *str);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_isdigit(int c);
+int		ft_strlen(char *s);
+int		ft_atoi(const char *str);
 
 // App functions
 bool	manage_inputs(int c, char **inputs);

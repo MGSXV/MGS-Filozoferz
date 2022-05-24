@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 22:29:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/21 16:03:09 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/05/24 18:13:58 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_error(char *err_msg)
 {
-	ft_printf("%s", err_msg);
+	printf("%s", err_msg);
 }

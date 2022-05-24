@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 18:57:41 by sel-kham          #+#    #+#              #
-#    Updated: 2022/05/21 15:51:45 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/05/24 18:13:02 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,16 +22,16 @@ INCLUDES := includes
 SRC_DIR := src
 OBJ_DIR := obj
 ## Sub-directories
-PRINTF_DIR := $(INCLUDES)/ft_printf
 HEADERS_DIR := $(INCLUDES)/headers
 
-PRINTF := $(PRINTF_DIR)/libftprintf.a
 HEADERS := $(addprefix $(HEADERS_DIR)/, philosophers.h)
 HELPERS := $(SRC_DIR)/helpers
 APP := $(SRC_DIR)/app
+INIT := $(SRC_DIR)/init
 MAIN := main.c
-SRC := $(HELPERS)/ft_strncmp.c $(HELPERS)/ft_error.c\
-		$(APP)/manage_inputs.c
+SRC := $(HELPERS)/ft_strncmp.c $(HELPERS)/ft_error.c $(HELPERS)/ft_isdigit.c $(HELPERS)/ft_atoi.c $(HELPERS)/ft_strlen.c \
+		$(APP)/manage_inputs.c \
+		$(INIT)/init_app.c
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
 CFLAGS := -Wall -Wextra -Werror
@@ -43,9 +43,9 @@ all: $(NAME)
 	@cat $(INCLUDES)/ascii-art.ans
 	@echo $(PH)
 
-$(NAME): $(MAIN) $(PRINTF) $(HEADERS) $(OBJ)
+$(NAME): $(MAIN) $(HEADERS) $(OBJ)
 	@echo "$(GREEN)Making $(WHITE)philo file..."
-	@$(CC) $(CFLAGS) $(MAIN) $(PRINTF) $(OBJ) -o $(NAME)
+	@$(CC) $(CFLAGS) $(MAIN) $(OBJ) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(HELPERS)/%.c
 	@echo "$(GREEN)Making $(WHITE)source object files..."
@@ -56,22 +56,20 @@ $(OBJ_DIR)/%.o: $(APP)/%.c
 	@echo "$(GREEN)Making $(WHITE)source object files..."
 	@mkdir -p $(OBJ_DIR)/
 	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(PRINTF): $(shell find $(PRINTF_DIR) -name "*.c" -type f)
-	@echo "$(GREEN)Making $(WHITE)ft_printf files..."
-	@$(MAKE) -C $(PRINTF_DIR)/
+$(OBJ_DIR)/%.o: $(INIT)/%.c
+	@echo "$(GREEN)Making $(WHITE)source object files..."
+	@mkdir -p $(OBJ_DIR)/
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@echo "$(RED)Removing $(WHITE)philo object files..."
 	@rm -rf $(OBJ_DIR)/*.o
-	@echo "$(RED)Removing $(WHITE)ft_printf object files..."
-	@$(MAKE) -C $(PRINTF_DIR)/ clean
 
 fclean: clean
 	@echo "$(RED)Removing $(WHITE)philo executable file..."
 	@rm -rf $(NAME)
-	@echo "$(RED)Removing $(WHITE)ft_printf static library file..."
-	@$(MAKE) -C $(PRINTF_DIR)/ fclean
 
 re: fclean all
 	
