@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/24 18:13:25 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/05/25 18:35:32 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define PHILOSOPHERS_H
 # include<stdio.h>
 # include<stdbool.h>
+# include<pthread.h>
 
 # include "types.h"
 
@@ -28,6 +29,6 @@ int		ft_atoi(const char *str);
 bool	manage_inputs(int c, char **inputs);
 
 // Init functions
-void	init_app(t_philosophers *ph, char **v, char c);
+void	init_app(t_philo_info *ph, char **v, char c);
 
 #endif
