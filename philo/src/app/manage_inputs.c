@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 15:52:03 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/07 10:51:46 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:55:53 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ All arguments should be positive intigers!\n");
 	}
 	if (c != 5 && c != 6)
 	{
-		printf("Invalid number of arguments!\n\
+		printf("Invalid arguments!\n\
 Try \"--help\" for more information.\n");
 		return (false);
 	}

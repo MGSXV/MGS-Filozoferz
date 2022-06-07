@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/20 21:11:56 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:57:55 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	main(int c, char **v)
 {
-	foo();
+	if (!manage_inputs(c, v))
+		return (0);
 	return (0);
 }

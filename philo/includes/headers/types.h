@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:45:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/25 18:34:56 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:57:44 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ typedef struct s_philosopher
 	struct s_philosopher	*prev_philo;
 	t_philo_info			*info;
 }	t_philosofer;
-
 
 #endif
