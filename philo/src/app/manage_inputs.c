@@ -6,24 +6,11 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 15:52:03 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/24 18:09:48 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/07 10:51:46 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/philosophers.h"
-
-bool	ft_isnumber(char *str)
-{
-	int	i;
-
-	i = -1;
-	while (str[++i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-	}
-	return (true);
-}
 
 bool	manage_inputs(int c, char **inputs)
 {

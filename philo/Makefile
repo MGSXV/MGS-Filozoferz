@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 18:57:41 by sel-kham          #+#    #+#              #
-#    Updated: 2022/05/24 18:13:02 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/06/07 10:53:09 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ HELPERS := $(SRC_DIR)/helpers
 APP := $(SRC_DIR)/app
 INIT := $(SRC_DIR)/init
 MAIN := main.c
-SRC := $(HELPERS)/ft_strncmp.c $(HELPERS)/ft_error.c $(HELPERS)/ft_isdigit.c $(HELPERS)/ft_atoi.c $(HELPERS)/ft_strlen.c \
+SRC := $(HELPERS)/ft_strncmp.c $(HELPERS)/ft_error.c $(HELPERS)/ft_isdigit.c $(HELPERS)/ft_atoi.c $(HELPERS)/ft_strlen.c $(HELPERS)/ft_isnumber.c \
 		$(APP)/manage_inputs.c \
 		$(INIT)/init_app.c
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
