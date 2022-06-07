@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:10:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/07 11:24:58 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/07 11:26:52 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_philosofer	*ft_new_node(t_table **table)
 {
 	t_philosofer	*tmp_philo;
 
-	tmp_philo = malloc(sizeof(t_philosofer));
+	tmp_philo = malloc(sizeof(t_philosofer *));
 	if (!tmp_philo)
 		return (NULL);
 	tmp_philo->next_philo = NULL;

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/07 10:53:33 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/07 11:30:26 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # define PHILOSOPHERS_H
 # include<stdio.h>
+# include<stdlib.h>
 # include<stdbool.h>
 # include<pthread.h>
 
@@ -30,6 +31,6 @@ bool	ft_isnumber(char *str);
 bool	manage_inputs(int c, char **inputs);
 
 // Init functions
-void	init_app(t_philo_info *ph, char **v, char c);
+void	init_app(t_table **table, int c, char **v);
 
 #endif
