@@ -6,13 +6,13 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:04:12 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/21 16:03:16 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:58:09 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/philosophers.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*str1;
