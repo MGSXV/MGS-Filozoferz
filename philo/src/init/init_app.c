@@ -6,13 +6,13 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 20:00:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/07 11:19:51 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/07 11:32:09 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/philosophers.h"
 
-void	init_app(t_table **table, char **v, char c)
+void	init_app(t_table **table, int c, char **v)
 {
 	if (c == 5)
 	{
