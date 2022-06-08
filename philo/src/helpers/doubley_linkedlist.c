@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:10:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/08 03:01:06 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/08 19:55:53 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_philosofer	*ft_new_node(int philo_id)
 void	ft_add_node(t_table **table, t_philosofer *node)
 {
 	t_philosofer	*tmp;
-	
+
 	tmp = NULL;
 	if (!node)
 		return ;
