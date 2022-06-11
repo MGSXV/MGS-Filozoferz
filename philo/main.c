@@ -6,11 +6,31 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/08 03:33:20 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/10 22:30:05 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/headers/philosophers.h"
+
+void	print_philo(t_table *table)
+{
+	t_philosofer	*tmp;
+	int				i;
+
+	i = -1;
+	tmp = table->head;
+	printf("***********************************\n");
+	printf("philos_num: %d\n", table->philos_num);
+	printf("eat_num: %d\n", table->eat_num);
+	printf("time_to_die: %d\n", table->time_to_die);
+	printf("time_to_eat: %d\n", table->time_to_eat);
+	printf("time_to_sleep: %d\n", table->time_to_sleep);
+	while (++i < table->philos_num)
+	{
+		printf("Philosopher ID: %d\n", tmp->philo_id);
+		tmp = tmp->next_philo;
+	}
+}
 
 int	main(int c, char **v)
 {
