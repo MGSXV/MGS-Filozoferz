@@ -6,7 +6,7 @@
 #    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 18:57:41 by sel-kham          #+#    #+#              #
-#    Updated: 2022/06/08 03:34:40 by sel-kham         ###   ########.fr        #
+#    Updated: 2022/06/13 22:29:35 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ APP := $(SRC_DIR)/app
 INIT := $(SRC_DIR)/init
 MAIN := main.c
 SRC := $(HELPERS)/ft_strncmp.c $(HELPERS)/ft_error.c $(HELPERS)/ft_isdigit.c $(HELPERS)/ft_atoi.c $(HELPERS)/ft_strlen.c $(HELPERS)/ft_isnumber.c $(HELPERS)/doubley_linkedlist.c \
-		$(APP)/validate_inputs.c \
+		$(APP)/validate_inputs.c $(APP)/handle_threads.c \
 		$(INIT)/init_app.c
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
