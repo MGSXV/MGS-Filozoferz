@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/13 22:46:15 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/13 22:50:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void			ft_add_node(t_table **table, t_philosofer *node);
 
 // App functions
 bool			manage_inputs(int c, char **inputs);
+void			create_threads(t_table *table);
 void			join_threads(t_table *table);
 void			*philosophers_handler(void *philo);
 
