@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:45:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/12 22:27:01 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/13 21:14:27 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_philosopher
 	pthread_mutex_t			fork;
 	struct s_philosopher	*next_philo;
 	struct s_philosopher	*prev_philo;
+	bool					is_dead;
 }	t_philosofer;
 
 typedef struct s_table
