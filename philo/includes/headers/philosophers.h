@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/08 19:55:35 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/13 21:45:58 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include<stdlib.h>
 # include<stdbool.h>
 # include<pthread.h>
+# include<unistd.h>
 
 # include "types.h"
 
@@ -31,6 +32,8 @@ void			ft_add_node(t_table **table, t_philosofer *node);
 
 // App functions
 bool			manage_inputs(int c, char **inputs);
+void			join_threads(t_table *table);
+
 // Init functions
 void			init_app(t_table **table, int c, char **v);
 void			init_philosophers(t_table *table);

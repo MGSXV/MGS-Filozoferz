@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/10 22:30:05 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/13 21:46:15 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int	main(int c, char **v)
 		return (0);
 	init_app(&table, c, v);
 	init_philosophers(table);
+	join_threads(table);
 	return (0);
 }
