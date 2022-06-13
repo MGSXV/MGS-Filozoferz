@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 22:38:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/13 22:41:47 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/13 23:04:17 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	*philosophers_handler(void *philo)
 {
-	t_table	*table;
+	t_philosofer	*ph;
 
-	table = (t_table *) philo;
+	ph = (t_philosofer *) philo;
+	printf("This is the philosopher number: %d\n", ph->philo_id);
 	return (NULL);
 }
