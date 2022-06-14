@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/13 22:50:30 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/14 00:52:31 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int				ft_atoi(const char *str);
 bool			ft_isnumber(char *str);
 t_philosofer	*ft_new_node(int id);
 void			ft_add_node(t_table **table, t_philosofer *node);
+void			free_all(t_table **table);
 
 // App functions
 bool			manage_inputs(int c, char **inputs);
