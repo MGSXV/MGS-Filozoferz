@@ -6,13 +6,13 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:36:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 21:34:43 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/16 22:00:16 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/philosophers.h"
 
-void	create_threads(t_table *table)
+void	*create_threads(t_table *table)
 {
 	int				i;
 	t_philosofer	*tmp;
@@ -21,13 +21,15 @@ void	create_threads(t_table *table)
 	tmp = table->head;
 	while (++i < table->philos_num)
 	{
-		pthread_create(&(tmp->philosopher), NULL,
-			philosophers_handler, (void *) tmp);
+		if (pthread_create(&(tmp->philosopher), NULL,
+				philosophers_handler, (void *) tmp))
+			return (NULL);
 		tmp = tmp->next_philo;
 	}
+	return (table);
 }
 
-void	join_threads(t_table *table)
+void	*join_threads(t_table *table)
 {
 	int				i;
 	t_philosofer	*tmp;
@@ -36,12 +38,14 @@ void	join_threads(t_table *table)
 	tmp = table->head;
 	while (++i < table->philos_num)
 	{
-		pthread_join(tmp->philosopher, NULL);
+		if (pthread_join(tmp->philosopher, NULL))
+			return (NULL);
 		tmp = tmp->next_philo;
 	}
+	return (table);
 }
 
-void	init_mutexes(t_table **table)
+void	*init_mutexes(t_table **table)
 {
 	t_philosofer	*tmp;
 	int				i;
@@ -50,7 +54,9 @@ void	init_mutexes(t_table **table)
 	tmp = (*table)->head;
 	while (++i < (*table)->philos_num && tmp)
 	{
-		pthread_mutex_init(&(tmp->fork), NULL);
+		if (!pthread_mutex_init(&(tmp->fork), NULL))
+			return (NULL);
 		tmp = tmp->next_philo;
 	}
+	return (table);
 }

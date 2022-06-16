@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 21:33:28 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/16 21:58:44 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,19 @@ int				ft_strlen(char *s);
 int				ft_atoi(const char *str);
 bool			ft_isnumber(char *str);
 t_philosofer	*ft_new_node(int id);
-void			ft_add_node(t_table **table, t_philosofer *node);
+void			*ft_add_node(t_table **table, t_philosofer *node);
 void			free_all(t_table **table);
 
 // App functions
 bool			manage_inputs(int c, char **inputs);
-void			create_threads(t_table *table);
-void			join_threads(t_table *table);
+void			*create_threads(t_table *table);
+void			*join_threads(t_table *table);
+void			*init_mutexes(t_table **table);
 void			*philosophers_handler(void *philo);
 long			timestamp_in_ms(void);
-void			init_mutexes(t_table **table);
 
 // Init functions
 void			init_app(t_table **table, int c, char **v);
-void			init_philosophers(t_table *table);
+void			*init_philosophers(t_table *table);
 
 #endif
