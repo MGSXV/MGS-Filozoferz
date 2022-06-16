@@ -37,10 +37,10 @@ int	main(int c, char **v)
 	t_table	*table;
 
 	if (!manage_inputs(c, v))
-		return (0);
+		return (2);
 	table = malloc(sizeof(t_table));
 	if (!table)
-		return (0);
+		return (2);
 	init_app(&table, c, v);
 	init_philosophers(table);
 	create_threads(table);
