@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 22:21:56 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:08:18 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	main(int c, char **v)
 	init_app(&table, c, v);
 	if (!init_philosophers(table))
 		return (2);
+	init_mutexes(&table);
 	if (!create_threads(table))
 		return (2);
 	if (!join_threads(table))
