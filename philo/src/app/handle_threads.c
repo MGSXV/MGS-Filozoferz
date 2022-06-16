@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:36:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 22:20:46 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/16 23:19:05 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	*create_threads(t_table *table)
 	tmp = table->head;
 	while (++i < table->philos_num)
 	{
+		tmp->last_meal = timestamp_in_ms();
 		if (pthread_create(&(tmp->philosopher), NULL,
 				philosophers_handler, (void *) tmp))
 			return (NULL);
