@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 21:58:44 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/16 22:21:22 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ bool			manage_inputs(int c, char **inputs);
 void			*create_threads(t_table *table);
 void			*join_threads(t_table *table);
 void			*init_mutexes(t_table **table);
+void			*destroy_mutexes(t_table **table);
 void			*philosophers_handler(void *philo);
 long			timestamp_in_ms(void);
 

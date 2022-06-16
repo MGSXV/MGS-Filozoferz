@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:36:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 22:00:16 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/16 22:20:46 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,23 @@ void	*init_mutexes(t_table **table)
 	tmp = (*table)->head;
 	while (++i < (*table)->philos_num && tmp)
 	{
-		if (!pthread_mutex_init(&(tmp->fork), NULL))
+		if (pthread_mutex_init(&(tmp->fork), NULL))
+			return (NULL);
+		tmp = tmp->next_philo;
+	}
+	return (table);
+}
+
+void	*destroy_mutexes(t_table **table)
+{
+	t_philosofer	*tmp;
+	int				i;
+
+	i = -1;
+	tmp = (*table)->head;
+	while (++i < (*table)->philos_num && tmp)
+	{
+		if (pthread_mutex_destroy(&(tmp->fork)))
 			return (NULL);
 		tmp = tmp->next_philo;
 	}
