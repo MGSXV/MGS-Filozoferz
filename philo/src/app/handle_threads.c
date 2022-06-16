@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_threads.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:36:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 18:34:09 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/16 21:34:43 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ void	create_threads(t_table *table)
 	tmp = table->head;
 	while (++i < table->philos_num)
 	{
-		pthread_create(&(tmp->philosopher), NULL, philosophers_handler, (void *) tmp);
+		pthread_create(&(tmp->philosopher), NULL,
+			philosophers_handler, (void *) tmp);
 		tmp = tmp->next_philo;
 	}
 }
 
 void	join_threads(t_table *table)
 {
-	int	i;
+	int				i;
 	t_philosofer	*tmp;
 
 	i = -1;
@@ -40,7 +41,16 @@ void	join_threads(t_table *table)
 	}
 }
 
-// void	init_mutexes(t_table **table)
-// {
-	
-// }
+void	init_mutexes(t_table **table)
+{
+	t_philosofer	*tmp;
+	int				i;
+
+	i = -1;
+	tmp = (*table)->head;
+	while (++i < (*table)->philos_num && tmp)
+	{
+		pthread_mutex_init(&(tmp->fork), NULL);
+		tmp = tmp->next_philo;
+	}
+}
