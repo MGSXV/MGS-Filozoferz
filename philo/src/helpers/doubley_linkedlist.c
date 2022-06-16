@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:10:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 21:52:25 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/16 22:54:49 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_philosofer	*ft_new_node(int philo_id)
 	tmp_philo->next_philo = NULL;
 	tmp_philo->prev_philo = NULL;
 	tmp_philo->philo_id = philo_id;
+	tmp_philo->num_times_eat = 0;
 	return (tmp_philo);
 }
 
