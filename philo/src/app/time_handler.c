@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   time_handler.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:14:57 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/16 18:18:01 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/16 21:34:57 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/philosophers.h"
 
-long	timestamp_in_ms()
+long	timestamp_in_ms(void)
 {
 	struct timeval	now;
 	

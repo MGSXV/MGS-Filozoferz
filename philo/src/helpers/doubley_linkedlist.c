@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:10:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/08 19:55:53 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/16 21:37:01 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_add_node(t_table **table, t_philosofer *node)
 		(*table)->head = node;
 		(*table)->head->next_philo = (*table)->head;
 		(*table)->head->prev_philo = (*table)->head;
-		(*table)->head->table = (void *) (*table);
+		(*table)->head->table = (void *)(*table);
 	}
 	else
 	{
@@ -46,6 +46,6 @@ void	ft_add_node(t_table **table, t_philosofer *node)
 		node->next_philo = (*table)->head;
 		node->prev_philo = tmp;
 		tmp->next_philo = node;
-		node->table = (void *) (*table);
+		node->table = (void *)(*table);
 	}
 }	
