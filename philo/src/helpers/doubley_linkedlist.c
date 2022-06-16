@@ -37,6 +37,7 @@ void	ft_add_node(t_table **table, t_philosofer *node)
 		(*table)->head = node;
 		(*table)->head->next_philo = (*table)->head;
 		(*table)->head->prev_philo = (*table)->head;
+		(*table)->head->table = (void *) (*table);
 	}
 	else
 	{
@@ -45,5 +46,6 @@ void	ft_add_node(t_table **table, t_philosofer *node)
 		node->next_philo = (*table)->head;
 		node->prev_philo = tmp;
 		tmp->next_philo = node;
+		node->table = (void *) (*table);
 	}
 }	

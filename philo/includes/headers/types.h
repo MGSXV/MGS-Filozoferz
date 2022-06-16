@@ -24,6 +24,7 @@ typedef struct s_philosopher
 	struct s_philosopher	*next_philo;
 	struct s_philosopher	*prev_philo;
 	bool					is_dead;
+	void					*table;
 }	t_philosofer;
 
 typedef struct s_table
