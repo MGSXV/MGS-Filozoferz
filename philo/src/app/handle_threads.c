@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_threads.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:36:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/13 23:04:57 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:34:09 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,8 @@ void	join_threads(t_table *table)
 		tmp = tmp->next_philo;
 	}
 }
+
+// void	init_mutexes(t_table **table)
+// {
+	
+// }

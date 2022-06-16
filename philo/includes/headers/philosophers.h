@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/14 00:52:31 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/16 18:18:54 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include<stdbool.h>
 # include<pthread.h>
 # include<unistd.h>
+# include<sys/time.h>
 
 # include "types.h"
 
@@ -36,6 +37,7 @@ bool			manage_inputs(int c, char **inputs);
 void			create_threads(t_table *table);
 void			join_threads(t_table *table);
 void			*philosophers_handler(void *philo);
+long			timestamp_in_ms();
 
 // Init functions
 void			init_app(t_table **table, int c, char **v);
