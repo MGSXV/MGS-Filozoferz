@@ -34,7 +34,7 @@ SRC := $(HELPERS)/ft_strncmp.c $(HELPERS)/ft_error.c $(HELPERS)/ft_isdigit.c $(H
 		$(INIT)/init_app.c
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))
 
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror -pthread
 NAME := philo
 PH := "\n$(GREEN)  _____  _     _ _____         _____  _______  _____   _____  _     _ _______  ______ _______\n |_____] |_____|   |   |      |     | |______ |     | |_____] |_____| |______ |_____/ |______\n |       |     | __|__ |_____ |_____| ______| |_____| |       |     | |______ |    \_ ______|\n                                                                                             \n$(RED)       __  ____________\n      /  |/  / ___/ __/\n     / /|_/ / (_ /\ \  \n$(GREEN)BY$(RED)  /_/  /_/\___/___/  \n                   \n$(WHITE)\n"
 
