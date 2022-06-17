@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 22:38:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 20:20:13 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/17 20:22:44 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	*philosophers_handler(void *philo)
 	while (!(ph->table->someonedied))
 	{
 		eating(ph->table, ph);
-		pthread_mutex_unlock(&(ph->fork));
-		pthread_mutex_unlock(&(ph->next_philo->fork));
 		if (ph->table->eat_num != -1 && ph->num_times_eat == ph->table->eat_num)
 			break ;
 		sleeping(ph->table, ph);
