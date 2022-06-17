@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   handle_threads.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:36:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 23:19:05 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/17 18:49:41 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/philosophers.h"
 
-void	*create_threads(t_table *table)
+bool	create_threads(t_table *table)
 {
 	int				i;
 	t_philosofer	*tmp;
@@ -24,13 +24,13 @@ void	*create_threads(t_table *table)
 		tmp->last_meal = timestamp_in_ms();
 		if (pthread_create(&(tmp->philosopher), NULL,
 				philosophers_handler, (void *) tmp))
-			return (NULL);
+			return (false);
 		tmp = tmp->next_philo;
 	}
-	return (table);
+	return (true);
 }
 
-void	*join_threads(t_table *table)
+bool	join_threads(t_table *table)
 {
 	int				i;
 	t_philosofer	*tmp;
@@ -40,13 +40,13 @@ void	*join_threads(t_table *table)
 	while (++i < table->philos_num)
 	{
 		if (pthread_join(tmp->philosopher, NULL))
-			return (NULL);
+			return (false);
 		tmp = tmp->next_philo;
 	}
-	return (table);
+	return (true);
 }
 
-void	*init_mutexes(t_table **table)
+bool	init_mutexes(t_table **table)
 {
 	t_philosofer	*tmp;
 	int				i;
@@ -56,13 +56,13 @@ void	*init_mutexes(t_table **table)
 	while (++i < (*table)->philos_num && tmp)
 	{
 		if (pthread_mutex_init(&(tmp->fork), NULL))
-			return (NULL);
+			return (false);
 		tmp = tmp->next_philo;
 	}
 	return (table);
 }
 
-void	*destroy_mutexes(t_table **table)
+bool	destroy_mutexes(t_table **table)
 {
 	t_philosofer	*tmp;
 	int				i;
@@ -72,8 +72,8 @@ void	*destroy_mutexes(t_table **table)
 	while (++i < (*table)->philos_num && tmp)
 	{
 		if (pthread_mutex_destroy(&(tmp->fork)))
-			return (NULL);
+			return (false);
 		tmp = tmp->next_philo;
 	}
-	return (table);
+	return (true);
 }

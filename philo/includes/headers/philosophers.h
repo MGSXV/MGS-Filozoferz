@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 01:00:36 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/17 18:49:53 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void			free_all(t_table **table);
 
 // App functions
 bool			manage_inputs(int c, char **inputs);
-void			*create_threads(t_table *table);
-void			*join_threads(t_table *table);
-void			*init_mutexes(t_table **table);
-void			*destroy_mutexes(t_table **table);
+bool			create_threads(t_table *table);
+bool			join_threads(t_table *table);
+bool			init_mutexes(t_table **table);
+bool			destroy_mutexes(t_table **table);
 void			*philosophers_handler(void *philo);
 long			timestamp_in_ms(void);
 int				time_now(t_table *table);
@@ -48,6 +48,6 @@ void			thinking(t_table *table, t_philosofer *ph);
 
 // Init functions
 void			init_app(t_table **table, int c, char **v);
-void			*init_philosophers(t_table *table);
+bool			init_philosophers(t_table *table);
 
 #endif

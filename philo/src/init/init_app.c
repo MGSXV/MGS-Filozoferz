@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_app.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 20:00:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 22:59:03 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/17 18:46:51 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ void	init_app(t_table **table, int c, char **v)
 	(*table)->t0 = timestamp_in_ms();
 }
 
-void	*init_philosophers(t_table *table)
+bool	init_philosophers(t_table *table)
 {
 	int	i;
 
 	i = -1;
 	while (++i < table->philos_num)
 		if (!ft_add_node(&table, ft_new_node(i + 1)))
-			return (NULL);
-	return (table);
+			return (false);
+	return (true);
 }
