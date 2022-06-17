@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   behaviour_handler.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:31:29 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 00:58:31 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/17 20:20:22 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ void	behaviour(char *action, int time, int philo_id)
 
 void	eating(t_table *table, t_philosofer *ph)
 {
+	pthread_mutex_lock(&(ph->fork));
+	behaviour("has taken a fork", time_now(ph->table), ph->philo_id);
+	pthread_mutex_lock(&(ph->next_philo->fork));
+	behaviour("has taken a fork", time_now(ph->table), ph->philo_id);
 	behaviour("is eating", time_now(table), ph->philo_id);
 	usleep(table->time_to_eat * 1000);
 	ph->last_meal = timestamp_in_ms();
