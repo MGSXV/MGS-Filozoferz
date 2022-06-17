@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 22:33:26 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/17 01:00:36 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,11 @@ void			*init_mutexes(t_table **table);
 void			*destroy_mutexes(t_table **table);
 void			*philosophers_handler(void *philo);
 long			timestamp_in_ms(void);
+int				time_now(t_table *table);
 void			behaviour(char *action, int time, int philo_id);
+void			eating(t_table *table, t_philosofer *ph);
+void			sleeping(t_table *table, t_philosofer *ph);
+void			thinking(t_table *table, t_philosofer *ph);
 
 // Init functions
 void			init_app(t_table **table, int c, char **v);
