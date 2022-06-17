@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:45:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 18:40:35 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/17 18:58:14 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_table
 	int				time_to_sleep;
 	int				eat_num;
 	long			t0;
-	int				someonedied;
+	bool			someonedied;
 	t_philosofer	*head;
 }	t_table;
 

@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 20:00:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 18:46:51 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/17 18:58:52 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	init_app(t_table **table, int c, char **v)
 		(*table)->eat_num = -1;
 	(*table)->head = NULL;
 	(*table)->t0 = timestamp_in_ms();
+	(*table)->someonedied = false;
 }
 
 bool	init_philosophers(t_table *table)
