@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 22:38:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 18:44:03 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/17 20:20:13 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@ void	*philosophers_handler(void *philo)
 	t_philosofer	*ph;
 
 	ph = (t_philosofer *) philo;
-	while (true)
+	while (!(ph->table->someonedied))
 	{
-		pthread_mutex_lock(&(ph->fork));
-		behaviour("has taken a fork", time_now(ph->table), ph->philo_id);
-		pthread_mutex_lock(&(ph->next_philo->fork));
-		behaviour("has taken a fork", time_now(ph->table), ph->philo_id);
 		eating(ph->table, ph);
 		pthread_mutex_unlock(&(ph->fork));
 		pthread_mutex_unlock(&(ph->next_philo->fork));
@@ -32,6 +28,7 @@ void	*philosophers_handler(void *philo)
 		thinking(ph->table, ph);
 		if (ph->table->time_to_die < timestamp_in_ms() - ph->last_meal)
 		{
+			ph->table->someonedied = true;
 			behaviour("died", time_now(ph->table), ph->philo_id);
 			return (ph->table);
 		}
