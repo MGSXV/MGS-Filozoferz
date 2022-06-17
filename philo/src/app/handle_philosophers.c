@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_philosophers.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 22:38:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 01:00:03 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/17 18:39:35 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*philosophers_handler(void *philo)
 	t_table			*table;
 
 	ph = (t_philosofer *) philo;
-	table = (t_table *)(ph->table);
+	table = (ph->table);
 	while (true)
 	{
 		pthread_mutex_lock(&(ph->fork));

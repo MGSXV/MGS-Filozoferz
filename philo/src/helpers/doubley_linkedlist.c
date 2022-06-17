@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   doubley_linkedlist.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:10:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 22:54:49 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/17 17:08:54 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	*ft_add_node(t_table **table, t_philosofer *node)
 		(*table)->head = node;
 		(*table)->head->next_philo = (*table)->head;
 		(*table)->head->prev_philo = (*table)->head;
-		(*table)->head->table = (void *)(*table);
+		(*table)->head->table = (*table);
 	}
 	else
 	{
@@ -47,7 +47,7 @@ void	*ft_add_node(t_table **table, t_philosofer *node)
 		node->next_philo = (*table)->head;
 		node->prev_philo = tmp;
 		tmp->next_philo = node;
-		node->table = (void *)(*table);
+		node->table = (*table);
 	}
 	return (*table);
 }	

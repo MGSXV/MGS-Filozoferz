@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   types.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:45:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 23:18:45 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/17 18:40:35 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include "philosophers.h"
 
+typedef struct s_table	t_table;
 typedef struct s_philosopher
 {
 	int						philo_id;
@@ -26,7 +27,7 @@ typedef struct s_philosopher
 	bool					is_dead;
 	long					last_meal;
 	int						num_times_eat;
-	void					*table;
+	t_table					*table;
 }	t_philosofer;
 
 typedef struct s_table
@@ -37,6 +38,7 @@ typedef struct s_table
 	int				time_to_sleep;
 	int				eat_num;
 	long			t0;
+	int				someonedied;
 	t_philosofer	*head;
 }	t_table;
 
