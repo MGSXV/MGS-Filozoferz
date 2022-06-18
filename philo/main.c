@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 18:50:22 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/17 23:50:39 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	print_philo(t_table *table)
 
 int	main(int c, char **v)
 {
-	t_table	*table;
+	t_table			*table;
+	t_philosofer	*ph;
 
 	if (!manage_inputs(c, v))
 		return (2);
@@ -52,6 +53,17 @@ int	main(int c, char **v)
 		return (2);
 	if (!destroy_mutexes(&table))
 		return (2);
-	free_all(&table);
+	ph = table->head;
+	while (!table->someonedied)
+	{
+		if (table->time_to_die < timestamp_in_ms() - ph->last_meal || table->someonedied)
+		{
+			ph->table->someonedied = true;
+			behaviour("died", time_now(ph->table), ph->philo_id);
+			free_all(&table);
+			return (0);
+		}
+		ph = ph->next_philo;
+	}
 	return (0);
 }
