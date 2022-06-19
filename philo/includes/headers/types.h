@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:45:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 18:58:14 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 17:15:10 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_philosopher
 {
 	int						philo_id;
 	pthread_t				philosopher;
-	pthread_mutex_t			fork;
 	struct s_philosopher	*next_philo;
 	struct s_philosopher	*prev_philo;
 	bool					is_dead;
@@ -39,6 +38,7 @@ typedef struct s_table
 	int				eat_num;
 	long			t0;
 	bool			someonedied;
+	pthread_mutex_t	*forks;
 	t_philosofer	*head;
 }	t_table;
 
