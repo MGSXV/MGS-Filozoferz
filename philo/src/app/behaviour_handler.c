@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:31:29 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 17:22:05 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 17:25:10 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	behaviour(long time, int philo_id, char *action)
 {
-	printf("%d %d %s\n", time, philo_id, action);
+	printf("%ld %d %s\n", time, philo_id, action);
 }
 
 void	eating(t_table *table, t_philosofer *ph)
@@ -33,11 +33,11 @@ void	eating(t_table *table, t_philosofer *ph)
 
 void	sleeping(t_table *table, t_philosofer *ph)
 {
-	behaviour("is sleeping", time_now(table), ph->philo_id);
+	behaviour(time_now(table), ph->philo_id, "is sleeping");
 	usleep(table->time_to_sleep * 1000);
 }
 
 void	thinking(t_table *table, t_philosofer *ph)
 {
-	behaviour("is thinking", time_now(table), ph->philo_id);
+	behaviour(time_now(table), ph->philo_id, "is thinkin");
 }
