@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:36:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 17:10:19 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 17:17:33 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,32 +48,27 @@ bool	join_threads(t_table *table)
 
 bool	init_mutexes(t_table **table)
 {
-	t_philosofer	*tmp;
 	int				i;
 
 	i = -1;
-	tmp = (*table)->head;
-	while (++i < (*table)->philos_num && tmp)
+	(*table)->forks = malloc(sizeof(pthread_mutex_t) * (*table)->philos_num);
+	while (++i < (*table)->philos_num)
 	{
-		if (pthread_mutex_init(&(tmp->fork), NULL))
+		if (pthread_mutex_init(&((*table)->forks[i]), NULL))
 			return (false);
-		tmp = tmp->next_philo;
 	}
 	return (table);
 }
 
 bool	destroy_mutexes(t_table **table)
 {
-	t_philosofer	*tmp;
 	int				i;
 
 	i = -1;
-	tmp = (*table)->head;
-	while (++i < (*table)->philos_num && tmp)
+	while (++i < (*table)->philos_num)
 	{
-		if (pthread_mutex_destroy(&(tmp->fork)))
+		if (pthread_mutex_destroy(&((*table)->forks[i])))
 			return (false);
-		tmp = tmp->next_philo;
 	}
 	return (true);
 }
