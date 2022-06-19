@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:10:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 17:08:54 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 19:49:29 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_philosofer	*ft_new_node(int philo_id)
 	tmp_philo->prev_philo = NULL;
 	tmp_philo->philo_id = philo_id;
 	tmp_philo->num_times_eat = 0;
+	tmp_philo->is_dead = 0;
 	return (tmp_philo);
 }
 
