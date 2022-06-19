@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 18:49:53 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 17:12:48 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ bool			init_mutexes(t_table **table);
 bool			destroy_mutexes(t_table **table);
 void			*philosophers_handler(void *philo);
 long			timestamp_in_ms(void);
-int				time_now(t_table *table);
-void			behaviour(char *action, int time, int philo_id);
+long			time_now(t_table *table);
+void			behaviour(long time, int philo_id, char *action);
 void			eating(t_table *table, t_philosofer *ph);
 void			sleeping(t_table *table, t_philosofer *ph);
 void			thinking(t_table *table, t_philosofer *ph);

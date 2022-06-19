@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 20:00:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 18:58:52 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 17:09:22 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	init_app(t_table **table, int c, char **v)
 	else
 		(*table)->eat_num = -1;
 	(*table)->head = NULL;
-	(*table)->t0 = timestamp_in_ms();
+	(*table)->t0 = time_now(*table);
 	(*table)->someonedied = false;
 }
 

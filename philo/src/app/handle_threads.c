@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:36:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 18:49:41 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 17:10:19 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool	create_threads(t_table *table)
 	tmp = table->head;
 	while (++i < table->philos_num)
 	{
-		tmp->last_meal = timestamp_in_ms();
+		tmp->last_meal = time_now(table);
 		if (pthread_create(&(tmp->philosopher), NULL,
 				philosophers_handler, (void *) tmp))
 			return (false);

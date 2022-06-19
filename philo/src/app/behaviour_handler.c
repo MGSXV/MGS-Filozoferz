@@ -6,13 +6,13 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:31:29 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/17 20:22:58 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 17:12:33 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/philosophers.h"
 
-void	behaviour(char *action, int time, int philo_id)
+void	behaviour(long time, int philo_id, char *action)
 {
 	printf("%d %d %s\n", time, philo_id, action);
 }

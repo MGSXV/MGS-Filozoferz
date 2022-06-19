@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   time_handler.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:14:57 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/17 01:00:14 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/19 17:11:44 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ long	timestamp_in_ms(void)
 	struct timeval	now;
 
 	gettimeofday(&now, NULL);
-	return (now.tv_sec * 1000LL + now.tv_usec / 1000LL);
+	return (now.tv_sec * 1000 + now.tv_usec / 1000);
 }
 
-int	time_now(t_table *table)
+long	time_now(t_table *table)
 {
 	return (timestamp_in_ms() - table->t0);
 }
