@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 19:48:38 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 21:24:28 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	main(int c, char **v)
 	table = malloc(sizeof(t_table));
 	if (!table)
 		return (2);
-	init_app(&table, c, v);
+	if (!init_app(&table, c, v))
+		return (2);
 	if (!init_philosophers(table))
 		return (2);
 	if (!init_mutexes(&table))
@@ -52,9 +53,10 @@ int	main(int c, char **v)
 	ph = table->head;
 	while (1)
 	{
-		if (ph->is_dead)
+		if (ph->table->time_to_die < time_now(ph->table) - ph->last_meal || \
+			table->how_many_eats == table->philos_num)
 		{
-			behaviour(time_now(table), ph->philo_id, "died");
+			behaviour(time_now(table), ph->philo_id, "died", table);
 			free_all(&table);
 			return (0);
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 17:30:57 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 21:19:26 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ bool			destroy_mutexes(t_table **table);
 void			*philosophers_handler(void *philo);
 long			timestamp_in_ms(void);
 long			time_now(t_table *table);
-void			behaviour(long time, int philo_id, char *action);
+void			behaviour(long time, int philo_id, char *action, t_table *table);
 void			eating(t_table *table, t_philosofer *ph);
 void			sleeping(t_table *table, t_philosofer *ph);
 void			thinking(t_table *table, t_philosofer *ph);
 
 // Init functions
-void			init_app(t_table **table, int c, char **v);
+bool			init_app(t_table **table, int c, char **v);
 bool			init_philosophers(t_table *table);
 
 #endif
