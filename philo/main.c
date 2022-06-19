@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 17:07:58 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 17:25:53 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	print_philo(t_table *table)
 int	main(int c, char **v)
 {
 	t_table			*table;
-	t_philosofer	*ph;
 
 	if (!manage_inputs(c, v))
 		return (2);
