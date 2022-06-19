@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 17:12:48 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 17:30:57 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int				ft_isdigit(int c);
 int				ft_strlen(char *s);
 int				ft_atoi(const char *str);
 bool			ft_isnumber(char *str);
+int				min_number(int a, int b);
+int				max_number(int a, int b);
 t_philosofer	*ft_new_node(int id);
 void			*ft_add_node(t_table **table, t_philosofer *node);
 void			free_all(t_table **table);
