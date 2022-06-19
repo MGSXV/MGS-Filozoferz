@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:31:29 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 17:25:10 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/19 18:13:55 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,21 @@ void	behaviour(long time, int philo_id, char *action)
 
 void	eating(t_table *table, t_philosofer *ph)
 {
-	pthread_mutex_lock(&(table->forks[ph->philo_id - 1]));
-	pthread_mutex_lock(&(table->forks[ph->philo_id - 1]));
+	int	min;
+	int	max;
+
+	min = min_number(ph->philo_id, ph->next_philo->philo_id);
+	max = max_number(ph->philo_id, ph->next_philo->philo_id);
+	pthread_mutex_lock(&(table->forks[min - 1]));
+	pthread_mutex_lock(&(table->forks[max - 1]));
 	behaviour(time_now(ph->table), ph->philo_id, "has taken a fork");
 	behaviour(time_now(ph->table), ph->philo_id, "has taken a fork");
 	behaviour(time_now(table), ph->philo_id, "is eating");
+	ph->last_meal = time_now(table);
 	usleep(table->time_to_eat * 1000);
-	pthread_mutex_unlock(&(table->forks[ph->philo_id - 1]));
-	pthread_mutex_unlock(&(table->forks[ph->philo_id - 1]));
-	ph->last_meal = timestamp_in_ms();
 	ph->num_times_eat++;
+	pthread_mutex_unlock(&(table->forks[min - 1]));
+	pthread_mutex_unlock(&(table->forks[max - 1]));
 }
 
 void	sleeping(t_table *table, t_philosofer *ph)
