@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_philosophers.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 22:38:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 21:05:48 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/20 11:39:07 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*philosophers_handler(void *philo)
 		{
 			ph->table->someonedied = true;
 			ph->is_dead = 1;
-			behaviour( time_now(ph->table), ph->philo_id, "died", ph->table);
+			behaviour(time_now(ph->table), ph->philo_id, "died", ph->table);
 			return (NULL);
 		}
 	}

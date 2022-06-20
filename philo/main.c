@@ -3,39 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 21:24:28 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/20 11:49:27 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/headers/philosophers.h"
 
-void	print_philo(t_table *table)
+static bool	death_detector(t_table *table)
 {
-	t_philosofer	*tmp;
-	int				i;
+	t_philosofer	*ph;
 
-	i = -1;
-	tmp = table->head;
-	printf("***********************************\n");
-	printf("philos_num: %d\n", table->philos_num);
-	printf("eat_num: %d\n", table->eat_num);
-	printf("time_to_die: %d\n", table->time_to_die);
-	printf("time_to_eat: %d\n", table->time_to_eat);
-	printf("time_to_sleep: %d\n", table->time_to_sleep);
-	while (++i < table->philos_num)
+	ph = table->head;
+	while (1)
 	{
-		printf("Philosopher ID: %d\n", tmp->philo_id);
-		tmp = tmp->next_philo;
+		if (ph->table->time_to_die < time_now(ph->table) - ph->last_meal || \
+			table->how_many_eats == table->philos_num)
+		{
+			behaviour(time_now(table), ph->philo_id, "died", table);
+			free_all(&table);
+			return (false);
+		}
+		ph = ph->next_philo;
 	}
+	return (true);
 }
 
 int	main(int c, char **v)
 {
 	t_table			*table;
-	t_philosofer	*ph;
 
 	if (!manage_inputs(c, v))
 		return (2);
@@ -50,20 +48,9 @@ int	main(int c, char **v)
 		return (2);
 	if (!create_threads(table))
 		return (2);
-	ph = table->head;
-	while (1)
-	{
-		if (ph->table->time_to_die < time_now(ph->table) - ph->last_meal || \
-			table->how_many_eats == table->philos_num)
-		{
-			behaviour(time_now(table), ph->philo_id, "died", table);
-			free_all(&table);
-			return (0);
-		}
-		ph = ph->next_philo;
-	}
+	death_detector(table);
 	join_threads(table);
 	destroy_mutexes(&table);
-	
+	free_all(&table);
 	return (0);
 }
