@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/20 11:49:27 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/20 11:53:34 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ static bool	death_detector(t_table *table)
 			table->how_many_eats == table->philos_num)
 		{
 			behaviour(time_now(table), ph->philo_id, "died", table);
-			free_all(&table);
 			return (false);
 		}
 		ph = ph->next_philo;

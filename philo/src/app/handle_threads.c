@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_threads.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:36:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 21:02:49 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/20 11:54:54 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ bool	join_threads(t_table *table)
 	tmp = table->head;
 	while (++i < table->philos_num)
 	{
-		if (pthread_join(tmp->philosopher, NULL))
+		if (pthread_detach(tmp->philosopher))
 			return (false);
 		tmp = tmp->next_philo;
 	}
