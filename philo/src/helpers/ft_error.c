@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 22:29:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/16 21:37:37 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/20 13:56:17 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	free_all(t_table **table)
 				tmp = (*table)->head;
 			}
 		}
+		if ((*table)->forks)
+			free((*table)->forks);
 		free(*table);
 	}
 }
