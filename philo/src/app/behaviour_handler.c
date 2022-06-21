@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   behaviour_handler.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:31:29 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 21:23:01 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:39:31 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	eating(t_table *table, t_philosofer *ph)
 	behaviour(time_now(ph->table), ph->philo_id, "has taken a fork", table);
 	behaviour(time_now(table), ph->philo_id, "is eating", table);
 	ph->last_meal = time_now(table);
-	usleep(table->time_to_eat * 1000);
+	ft_usleep(table->time_to_eat);
 	ph->num_times_eat++;
 	if (ph->num_times_eat == table->eat_num)
 		table->how_many_eats++;
@@ -43,7 +43,7 @@ void	eating(t_table *table, t_philosofer *ph)
 void	sleeping(t_table *table, t_philosofer *ph)
 {
 	behaviour(time_now(table), ph->philo_id, "is sleeping", table);
-	usleep(table->time_to_sleep * 1000);
+	ft_usleep(table->time_to_sleep);
 }
 
 void	thinking(t_table *table, t_philosofer *ph)

@@ -6,7 +6,7 @@
 #    By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 18:57:41 by sel-kham          #+#    #+#              #
-#    Updated: 2022/06/19 17:30:14 by mgs              ###   ########.fr        #
+#    Updated: 2022/06/21 14:40:41 by mgs              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ HELPERS := $(SRC_DIR)/helpers
 APP := $(SRC_DIR)/app
 INIT := $(SRC_DIR)/init
 MAIN := main.c
-SRC := $(HELPERS)/ft_strncmp.c $(HELPERS)/ft_error.c $(HELPERS)/ft_isdigit.c $(HELPERS)/ft_atoi.c $(HELPERS)/ft_strlen.c $(HELPERS)/ft_isnumber.c $(HELPERS)/doubley_linkedlist.c $(HELPERS)/numbers_handler.c \
+SRC := $(HELPERS)/ft_strncmp.c $(HELPERS)/ft_error.c $(HELPERS)/ft_isdigit.c $(HELPERS)/ft_atoi.c $(HELPERS)/ft_strlen.c $(HELPERS)/ft_isnumber.c $(HELPERS)/doubley_linkedlist.c $(HELPERS)/numbers_handler.c $(HELPERS)/ft_usleep.c \
 		$(APP)/validate_inputs.c $(APP)/handle_threads.c $(APP)/handle_philosophers.c $(APP)/time_handler.c $(APP)/behaviour_handler.c \
 		$(INIT)/init_app.c
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))

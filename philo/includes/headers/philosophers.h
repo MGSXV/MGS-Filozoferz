@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:26:47 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/20 11:38:53 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/21 14:40:26 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int				max_number(int a, int b);
 t_philosofer	*ft_new_node(int id);
 void			*ft_add_node(t_table **table, t_philosofer *node);
 void			free_all(t_table **table);
+void			ft_usleep(long ms);
 
 // App functions
 bool			manage_inputs(int c, char **inputs);
