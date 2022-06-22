@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:31:29 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/21 14:39:31 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/22 17:33:19 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	behaviour(long time, int philo_id, char *action, t_table *table)
 {
-	pthread_mutex_lock(&(table)->print_locker);
-	printf("%ld %d %s\n", time, philo_id, action);
-	pthread_mutex_unlock(&(table)->print_locker);
+	if (!table->someonedied)
+		printf("%ld %d %s\n", time, philo_id, action);
 }
 
 void	eating(t_table *table, t_philosofer *ph)
@@ -42,8 +41,8 @@ void	eating(t_table *table, t_philosofer *ph)
 
 void	sleeping(t_table *table, t_philosofer *ph)
 {
-	behaviour(time_now(table), ph->philo_id, "is sleeping", table);
 	ft_usleep(table->time_to_sleep);
+	behaviour(time_now(table), ph->philo_id, "is sleeping", table);
 }
 
 void	thinking(t_table *table, t_philosofer *ph)
