@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:36:59 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/20 11:54:54 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/22 15:33:08 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ bool	init_mutexes(t_table **table)
 
 	i = -1;
 	(*table)->forks = malloc(sizeof(pthread_mutex_t) * (*table)->philos_num);
+	if (!(*table)->forks)
+		return (NULL);
 	pthread_mutex_init(&((*table)->print_locker), NULL);
 	while (++i < (*table)->philos_num)
-	{
 		if (pthread_mutex_init(&((*table)->forks[i]), NULL))
 			return (false);
-	}
 	return (table);
 }
 
@@ -68,9 +68,7 @@ bool	destroy_mutexes(t_table **table)
 	i = -1;
 	pthread_mutex_destroy(&((*table)->print_locker));
 	while (++i < (*table)->philos_num)
-	{
-		if (pthread_mutex_destroy(&((*table)->forks[i])))
+		if (!pthread_mutex_destroy(&(*table)->forks[i]))
 			return (false);
-	}
 	return (true);
 }
