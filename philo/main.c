@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/22 15:59:05 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/22 22:35:28 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ static bool	death_detector(t_table *table)
 	{
 		if (ph->table->time_to_die < time_now(ph->table) - ph->last_meal)
 		{
-			behaviour(time_now(table), ph->philo_id, "died", table);
+			pthread_mutex_lock(&table->print_locker);
+			printf("%ld %d %s\n", time_now(ph->table), ph->philo_id, "died");
 			return (false);
 		}
 		if (table->how_many_eats == table->philos_num)

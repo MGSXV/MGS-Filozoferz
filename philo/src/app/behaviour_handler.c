@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   behaviour_handler.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:31:29 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/22 18:24:53 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/22 22:35:09 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	behaviour(long time, int philo_id, char *action, t_table *table)
 {
+	pthread_mutex_lock(&table->print_locker);
 	if (!table->someonedied)
 		printf("%ld %d %s\n", time, philo_id, action);
+	pthread_mutex_unlock(&table->print_locker);
 }
 
 void	eating(t_table *table, t_philosofer *ph)
