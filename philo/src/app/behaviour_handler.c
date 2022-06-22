@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:31:29 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/22 17:33:19 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/22 18:24:53 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	eating(t_table *table, t_philosofer *ph)
 	behaviour(time_now(ph->table), ph->philo_id, "has taken a fork", table);
 	behaviour(time_now(table), ph->philo_id, "is eating", table);
 	ph->last_meal = time_now(table);
-	ft_usleep(table->time_to_eat);
 	ph->num_times_eat++;
+	ft_usleep(table->time_to_eat);
 	if (ph->num_times_eat == table->eat_num)
 		table->how_many_eats++;
 	pthread_mutex_unlock(&(table->forks[min - 1]));
