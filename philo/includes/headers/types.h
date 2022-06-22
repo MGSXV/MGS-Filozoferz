@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   types.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:45:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 21:22:42 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:52:32 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_philosopher
 	pthread_t				philosopher;
 	struct s_philosopher	*next_philo;
 	struct s_philosopher	*prev_philo;
-	bool					is_dead;
 	long					last_meal;
 	int						num_times_eat;
 	t_table					*table;

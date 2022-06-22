@@ -6,7 +6,7 @@
 /*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 20:24:18 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/20 11:53:34 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/22 15:59:05 by mgs              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ static bool	death_detector(t_table *table)
 	ph = table->head;
 	while (1)
 	{
-		if (ph->table->time_to_die < time_now(ph->table) - ph->last_meal || \
-			table->how_many_eats == table->philos_num)
+		if (ph->table->time_to_die < time_now(ph->table) - ph->last_meal)
 		{
 			behaviour(time_now(table), ph->philo_id, "died", table);
 			return (false);
 		}
+		if (table->how_many_eats == table->philos_num)
+			return (false);
 		ph = ph->next_philo;
 	}
 	return (true);
