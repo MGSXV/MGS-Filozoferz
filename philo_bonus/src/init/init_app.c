@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 20:00:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/23 23:12:38 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/24 00:42:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ bool	init_app(t_table **table, int c, char **v)
 	}
 	else
 		(*table)->eat_num = -1;
-	// (*table)->head = NULL;
 	(*table)->t0 = time_now(*table);
 	(*table)->someonedied = false;
 	(*table)->how_many_eats = 0;

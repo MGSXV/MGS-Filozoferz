@@ -6,13 +6,13 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:01:35 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/24 00:36:54 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/24 00:45:07 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/headers/philosophers_bonus.h"
 
-void	waiting_func(t_table *table, pid_t *pids)
+void	hold_main(t_table *table, pid_t *pids)
 {
 	int	i;
 
@@ -31,10 +31,27 @@ void	waiting_func(t_table *table, pid_t *pids)
 	}
 }
 
+static void	forking(t_table *table, pid_t *pids)
+{
+	int		i;
+
+	i = -1;
+	while (++i < table->philos_num)
+	{
+		pids[i] = fork();
+		if (pids[i] == -1)
+			exit(EXIT_FAILURE);
+		if (pids[i] == 0)
+		{
+			routing(table, i);
+			exit(EXIT_SUCCESS);
+		}
+	}
+}
+
 int	main(int c, char **v)
 {
 	t_table	*table;
-	int		i;
 	pid_t	*pids;
 
 	if (!manage_inputs(c, v))
@@ -47,26 +64,8 @@ int	main(int c, char **v)
 		return (2);
 	if (!init_app(&table, c, v))
 		return (2);
-	i = -1;
 	init_sem(&table);
-	while (++i < table->philos_num)
-	{
-		pids[i] = fork();
-		if (pids[i] == -1)
-			exit(EXIT_FAILURE);
-		if (pids[i] == 0)
-		{
-			routing(table, i);
-			exit(EXIT_SUCCESS);
-		}
-	}
-	i = -1;
-	waiting_func(table, pids);
-	
-	// while (++i < table->philos_num)
-	// 	waitpid(pids[i], 0, 0);
-	// if (!init_philosophers(table))
-	// 	return (2);
-	// free_all(&table);
+	forking(table, pids);
+	hold_main(table, pids);
 	return (0);
 }

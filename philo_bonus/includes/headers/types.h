@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:04:44 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/23 23:20:37 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/24 00:40:54 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 typedef struct s_table
 {
-	int 			philo_id;
+	int				philo_id;
 	int				philos_num;
 	int				time_to_die;
 	int				time_to_eat;
@@ -44,7 +44,6 @@ typedef struct s_table
 	int				num_times_eat;
 	bool			someonedied;
 	int				how_many_eats;
-	// t_philosofer	*head;
 }	t_table;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:01:50 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/23 23:29:24 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/24 00:40:22 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ bool			manage_inputs(int c, char **inputs);
 long			timestamp_in_ms(void);
 long			time_now(t_table *table);
 void			init_sem(t_table **table);
-void			behaviour(long time, int philo_id, char *action, t_table *table);
+void			behaviour(long time, int philo_id, \
+					char *action, t_table *table);
 void			eating(t_table *table);
 void			sleeping(t_table *table);
 void			thinking(t_table *table);

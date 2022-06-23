@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 22:34:11 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/23 23:35:16 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/24 00:42:43 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ void	init_sem(t_table **table)
 	sem_unlink("sem_fork");
 	sem_unlink("sem_print");
 	sem_unlink("sem_death");
-	(*table)->sem_fork = sem_open("sem_fork", O_CREAT, 0777, (*table)->philos_num);
+	(*table)->sem_fork = sem_open("sem_fork", O_CREAT, 0777, \
+								(*table)->philos_num);
 	(*table)->sem_print = sem_open("sem_print", O_CREAT, 0777, 1);
 	(*table)->sem_death = sem_open("sem_death", O_CREAT, 0777, 1);
-	if ((*table)->sem_fork == SEM_FAILED || (*table)->sem_print == SEM_FAILED || (*table)->sem_death == SEM_FAILED)
+	if ((*table)->sem_fork == SEM_FAILED || (*table)->sem_print == SEM_FAILED \
+		|| (*table)->sem_death == SEM_FAILED)
 	{
-		// free_all
 		exit(EXIT_FAILURE);
 	}
 }
@@ -62,5 +63,4 @@ void	routing(t_table *table, int i)
 		sleeping(table);
 		thinking(table);
 	}
-	
 }
