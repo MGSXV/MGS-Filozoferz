@@ -6,11 +6,11 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 20:00:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/19 21:23:34 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:39:19 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/philosophers.h"
+#include "../../includes/headers/philosophers_bonus.h"
 
 bool	init_app(t_table **table, int c, char **v)
 {
@@ -28,7 +28,7 @@ bool	init_app(t_table **table, int c, char **v)
 	}
 	else
 		(*table)->eat_num = -1;
-	(*table)->head = NULL;
+	// (*table)->head = NULL;
 	(*table)->t0 = time_now(*table);
 	(*table)->someonedied = false;
 	(*table)->how_many_eats = 0;

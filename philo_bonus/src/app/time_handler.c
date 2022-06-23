@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   numbers_handler.c                                  :+:      :+:    :+:   */
+/*   time_handler.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/19 17:27:37 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/23 16:27:36 by sel-kham         ###   ########.fr       */
+/*   Created: 2022/06/16 18:14:57 by mgs               #+#    #+#             */
+/*   Updated: 2022/06/23 16:28:47 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/philosophers_bonus.h"
 
-int	min_number(int a, int b)
+long	timestamp_in_ms(void)
 {
-	if (a <= b)
-		return (a);
-	return (b);
+	struct timeval	now;
+
+	gettimeofday(&now, NULL);
+	return (now.tv_sec * 1000 + now.tv_usec / 1000);
 }
 
-int	max_number(int a, int b)
+long	time_now(t_table *table)
 {
-	if (a >= b)
-		return (a);
-	return (b);
+	return (timestamp_in_ms() - table->t0);
 }
