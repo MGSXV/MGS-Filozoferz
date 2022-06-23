@@ -6,11 +6,11 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 14:04:12 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/07 09:58:09 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:27:06 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/philosophers.h"
+#include "../../includes/headers/philosophers_bonus.h"
 
 int	ft_strncmp(char *s1, char *s2, size_t n)
 {

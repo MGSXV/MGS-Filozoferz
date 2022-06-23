@@ -6,11 +6,11 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 16:06:48 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/05/23 21:38:19 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:26:57 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/philosophers.h"
+#include "../../includes/headers/philosophers_bonus.h"
 
 int	ft_isdigit(int c)
 {

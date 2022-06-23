@@ -6,11 +6,11 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 10:50:30 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/07 10:51:50 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:27:00 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/philosophers.h"
+#include "../../includes/headers/philosophers_bonus.h"
 
 bool	ft_isnumber(char *str)
 {

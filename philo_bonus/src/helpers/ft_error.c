@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 22:29:02 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/20 13:56:17 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/23 16:26:53 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/philosophers.h"
+#include "../../includes/headers/philosophers_bonus.h"
 
 void	ft_error(char *err_msg)
 {

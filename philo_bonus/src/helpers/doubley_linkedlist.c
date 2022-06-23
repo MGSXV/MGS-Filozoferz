@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   doubley_linkedlist.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 11:10:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/22 16:52:24 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/23 16:26:47 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/headers/philosophers.h"
+#include "../../includes/headers/philosophers_bonus.h"
 
 t_philosofer	*ft_new_node(int philo_id)
 {
