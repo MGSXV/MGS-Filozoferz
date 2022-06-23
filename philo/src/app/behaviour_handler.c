@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 22:31:29 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/22 22:35:09 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/23 23:05:27 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void	sleeping(t_table *table, t_philosofer *ph)
 
 void	thinking(t_table *table, t_philosofer *ph)
 {
-	behaviour(time_now(table), ph->philo_id, "is thinkin", table);
+	behaviour(time_now(table), ph->philo_id, "is thinking", table);
 }
