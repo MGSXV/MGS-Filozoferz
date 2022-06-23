@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers_bonus.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:01:50 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/23 00:04:21 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/23 16:29:43 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,10 @@ t_philosofer	*ft_new_node(int id);
 void			*ft_add_node(t_table **table, t_philosofer *node);
 void			free_all(t_table **table);
 void			ft_usleep(long ms);
+
+// App functions
+bool			manage_inputs(int c, char **inputs);
+long			timestamp_in_ms(void);
+long			time_now(t_table *table);
 
 #endif

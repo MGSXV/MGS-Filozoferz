@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+         #
+#    By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 23:57:51 by mgs               #+#    #+#              #
-#    Updated: 2022/06/22 23:59:04 by mgs              ###   ########.fr        #
+#    Updated: 2022/06/23 16:26:25 by sel-kham         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJ_DIR := obj
 ## Sub-directories
 HEADERS_DIR := $(INCLUDES)/headers
 
-HEADERS := $(addprefix $(HEADERS_DIR)/, philosophers.h)
+HEADERS := $(addprefix $(HEADERS_DIR)/, philosophers_bonus.h)
 HELPERS := $(SRC_DIR)/helpers
 APP := $(SRC_DIR)/app
 INIT := $(SRC_DIR)/init
