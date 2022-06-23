@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:01:50 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/23 16:29:43 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/23 23:29:24 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include<stdbool.h>
 # include<pthread.h>
 # include<unistd.h>
+# include<semaphore.h>
+# include<signal.h>
 # include<sys/time.h>
 
 # include "types.h"
@@ -31,8 +33,6 @@ int				ft_atoi(const char *str);
 bool			ft_isnumber(char *str);
 int				min_number(int a, int b);
 int				max_number(int a, int b);
-t_philosofer	*ft_new_node(int id);
-void			*ft_add_node(t_table **table, t_philosofer *node);
 void			free_all(t_table **table);
 void			ft_usleep(long ms);
 
@@ -40,5 +40,14 @@ void			ft_usleep(long ms);
 bool			manage_inputs(int c, char **inputs);
 long			timestamp_in_ms(void);
 long			time_now(t_table *table);
+void			init_sem(t_table **table);
+void			behaviour(long time, int philo_id, char *action, t_table *table);
+void			eating(t_table *table);
+void			sleeping(t_table *table);
+void			thinking(t_table *table);
+void			routing(t_table *table, int i);
+
+// Init functions
+bool			init_app(t_table **table, int c, char **v);
 
 #endif

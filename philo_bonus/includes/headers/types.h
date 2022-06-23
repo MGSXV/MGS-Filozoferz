@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:04:44 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/23 16:39:04 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/23 23:20:37 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,12 @@ typedef struct s_table
 	int				time_to_eat;
 	int				time_to_sleep;
 	int				eat_num;
+	sem_t			*sem_fork;
+	sem_t			*sem_print;
+	sem_t			*sem_death;
 	long			t0;
+	long			last_meal;
+	int				num_times_eat;
 	bool			someonedied;
 	int				how_many_eats;
 	// t_philosofer	*head;

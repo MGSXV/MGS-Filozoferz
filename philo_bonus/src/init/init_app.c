@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 20:00:57 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/23 16:39:19 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/23 23:12:38 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ bool	init_app(t_table **table, int c, char **v)
 	return (true);
 }
 
-bool	init_philosophers(t_table *table)
-{
-	int	i;
+// bool	init_philosophers(t_table *table)
+// {
+// 	int	i;
 
-	i = -1;
-	while (++i < table->philos_num)
-		if (!ft_add_node(&table, ft_new_node(i + 1)))
-			return (false);
-	return (true);
-}
+// 	i = -1;
+// 	while (++i < table->philos_num)
+// 		if (!ft_add_node(&table, ft_new_node(i + 1)))
+// 			return (false);
+// 	return (true);
+// }
