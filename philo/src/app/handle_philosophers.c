@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   handle_philosophers.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgs <mgs@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 22:38:27 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/22 17:29:57 by mgs              ###   ########.fr       */
+/*   Updated: 2022/06/23 16:06:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/headers/philosophers.h"
+
+static void	est(t_philosofer *ph)
+{
+	eating(ph->table, ph);
+	sleeping(ph->table, ph);
+	thinking(ph->table, ph);
+}
+
+static void	tes(t_philosofer *ph)
+{
+	thinking(ph->table, ph);
+	eating(ph->table, ph);
+	sleeping(ph->table, ph);
+}
 
 void	*philosophers_handler(void *philo)
 {
@@ -20,17 +34,9 @@ void	*philosophers_handler(void *philo)
 	while (!(ph->table->someonedied))
 	{
 		if (ph->philo_id % 2)
-		{
-			eating(ph->table, ph);
-			sleeping(ph->table, ph);
-			thinking(ph->table, ph);
-		}
+			est(ph);
 		else
-		{
-			thinking(ph->table, ph);
-			eating(ph->table, ph);
-			sleeping(ph->table, ph);
-		}
+			tes(ph);
 		if (ph->table->time_to_die < time_now(ph->table) - ph->last_meal)
 		{
 			ph->table->someonedied = true;
