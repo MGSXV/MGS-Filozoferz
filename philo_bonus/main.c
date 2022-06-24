@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:01:35 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/24 00:45:07 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/24 04:03:52 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ void	hold_main(t_table *table, pid_t *pids)
 		while (++i < table->philos_num)
 			kill(pids[i], SIGINT);
 	}
-	else if (table->eat_num)
+	else
 	{
+		sem_wait(table->sem_full);
+		sem_wait(table->sem_full);
 		while (++i < table->philos_num)
-			waitpid(pids[i], 0, 0);
+			kill(pids[i], SIGINT);
 	}
 }
 

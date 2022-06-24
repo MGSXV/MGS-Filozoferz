@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:04:44 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/24 01:58:30 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/24 04:16:49 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,6 @@
 # define TYPES_H
 
 # include "philosophers_bonus.h"
-
-// typedef struct s_table	t_table;
-// typedef struct s_philosopher
-// {
-// 	int						philo_id;
-// 	pthread_t				philosopher;
-// 	struct s_philosopher	*next_philo;
-// 	struct s_philosopher	*prev_philo;
-// 	long					last_meal;
-// 	int						num_times_eat;
-// 	t_table					*table;
-// }	t_philosofer;
 
 typedef struct s_table
 {
@@ -39,6 +27,7 @@ typedef struct s_table
 	sem_t			*sem_fork;
 	sem_t			*sem_print;
 	sem_t			*sem_death;
+	sem_t			*sem_full;
 	long			t0;
 	long			last_meal;
 	int				num_times_eat;

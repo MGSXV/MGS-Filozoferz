@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 22:48:45 by sel-kham          #+#    #+#             */
-/*   Updated: 2022/06/23 23:07:21 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/24 04:17:23 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ void	eating(t_table *table)
 	table->last_meal = time_now(table);
 	table->num_times_eat++;
 	ft_usleep(table->time_to_eat);
-	if (table->num_times_eat == table->eat_num)
-		table->how_many_eats++;
 	sem_post(table->sem_fork);
 	sem_post(table->sem_fork);
 }
