@@ -6,7 +6,7 @@
 /*   By: sel-kham <sel-kham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:04:44 by mgs               #+#    #+#             */
-/*   Updated: 2022/06/24 00:40:54 by sel-kham         ###   ########.fr       */
+/*   Updated: 2022/06/24 01:58:30 by sel-kham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_table
 	int				num_times_eat;
 	bool			someonedied;
 	int				how_many_eats;
+	pid_t			*pids;
 }	t_table;
 
 #endif
